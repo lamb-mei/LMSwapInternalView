@@ -14,6 +14,12 @@
 		131E5EF01A28D023008842BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 131E5EEF1A28D023008842BD /* Images.xcassets */; };
 		131E5EF31A28D023008842BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 131E5EF11A28D023008842BD /* LaunchScreen.xib */; };
 		131E5EFF1A28D023008842BD /* LMSwapInternalViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5EFE1A28D023008842BD /* LMSwapInternalViewTests.m */; };
+		131E5F0E1A28D076008842BD /* LMSwapChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F091A28D076008842BD /* LMSwapChildViewController.m */; };
+		131E5F0F1A28D076008842BD /* LMSwapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F0B1A28D076008842BD /* LMSwapContainerViewController.m */; };
+		131E5F101A28D076008842BD /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F0D1A28D076008842BD /* FirstVC.m */; };
+		131E5F141A28D39D008842BD /* LMEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F131A28D39D008842BD /* LMEmptySegue.m */; };
+		131E5F171A28D64C008842BD /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F161A28D64C008842BD /* SecondVC.m */; };
+		131E5F1A1A28D6D8008842BD /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 131E5F191A28D6D8008842BD /* ThirdVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,18 @@
 		131E5EF81A28D023008842BD /* LMSwapInternalViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMSwapInternalViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		131E5EFD1A28D023008842BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131E5EFE1A28D023008842BD /* LMSwapInternalViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMSwapInternalViewTests.m; sourceTree = "<group>"; };
+		131E5F081A28D076008842BD /* LMSwapChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSwapChildViewController.h; sourceTree = "<group>"; };
+		131E5F091A28D076008842BD /* LMSwapChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSwapChildViewController.m; sourceTree = "<group>"; };
+		131E5F0A1A28D076008842BD /* LMSwapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMSwapContainerViewController.h; sourceTree = "<group>"; };
+		131E5F0B1A28D076008842BD /* LMSwapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMSwapContainerViewController.m; sourceTree = "<group>"; };
+		131E5F0C1A28D076008842BD /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		131E5F0D1A28D076008842BD /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		131E5F121A28D39D008842BD /* LMEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMEmptySegue.h; sourceTree = "<group>"; };
+		131E5F131A28D39D008842BD /* LMEmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMEmptySegue.m; sourceTree = "<group>"; };
+		131E5F151A28D64C008842BD /* SecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		131E5F161A28D64C008842BD /* SecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		131E5F181A28D6D8008842BD /* ThirdVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		131E5F191A28D6D8008842BD /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +99,13 @@
 		131E5EE11A28D023008842BD /* LMSwapInternalView */ = {
 			isa = PBXGroup;
 			children = (
+				131E5F111A28D0C5008842BD /* LMSwap */,
+				131E5F0C1A28D076008842BD /* FirstVC.h */,
+				131E5F0D1A28D076008842BD /* FirstVC.m */,
+				131E5F151A28D64C008842BD /* SecondVC.h */,
+				131E5F161A28D64C008842BD /* SecondVC.m */,
+				131E5F181A28D6D8008842BD /* ThirdVC.h */,
+				131E5F191A28D6D8008842BD /* ThirdVC.m */,
 				131E5EE61A28D023008842BD /* AppDelegate.h */,
 				131E5EE71A28D023008842BD /* AppDelegate.m */,
 				131E5EE91A28D023008842BD /* ViewController.h */,
@@ -117,6 +142,19 @@
 				131E5EFD1A28D023008842BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		131E5F111A28D0C5008842BD /* LMSwap */ = {
+			isa = PBXGroup;
+			children = (
+				131E5F121A28D39D008842BD /* LMEmptySegue.h */,
+				131E5F131A28D39D008842BD /* LMEmptySegue.m */,
+				131E5F081A28D076008842BD /* LMSwapChildViewController.h */,
+				131E5F091A28D076008842BD /* LMSwapChildViewController.m */,
+				131E5F0A1A28D076008842BD /* LMSwapContainerViewController.h */,
+				131E5F0B1A28D076008842BD /* LMSwapContainerViewController.m */,
+			);
+			name = LMSwap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +258,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				131E5EEB1A28D023008842BD /* ViewController.m in Sources */,
+				131E5F0E1A28D076008842BD /* LMSwapChildViewController.m in Sources */,
 				131E5EE81A28D023008842BD /* AppDelegate.m in Sources */,
+				131E5F0F1A28D076008842BD /* LMSwapContainerViewController.m in Sources */,
 				131E5EE51A28D023008842BD /* main.m in Sources */,
+				131E5F101A28D076008842BD /* FirstVC.m in Sources */,
+				131E5F1A1A28D6D8008842BD /* ThirdVC.m in Sources */,
+				131E5F141A28D39D008842BD /* LMEmptySegue.m in Sources */,
+				131E5F171A28D64C008842BD /* SecondVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

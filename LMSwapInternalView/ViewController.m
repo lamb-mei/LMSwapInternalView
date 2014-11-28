@@ -7,21 +7,69 @@
 //
 
 #import "ViewController.h"
+#import "LMSwapContainerViewController.h"
 
 @interface ViewController ()
+{
+    NSArray *pArray;
+}
+@property (nonatomic, weak) LMSwapContainerViewController *containerViewController;
+
 
 @end
 
+
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+
+
+#pragma mark - Initializer
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        pArray = @[@"embedFirst" ,@"embedSecound" ,@"embedThird"];
+
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    
 }
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //取得Container 實體
+    if ([segue.identifier isEqualToString:@"embedContainer"]) {
+        self.containerViewController = segue.destinationViewController;
+        //設定第一個顯示啥
+        self.containerViewController.defaultSID = pArray[0];
+        
+    }
+}
+
+-(IBAction)swapButtonPressed:(id)sender
+{
+    
+//    指定想要切換的 view
+//    [self.containerViewController swapViewControllersByID:@"embedThird"];
+    NSInteger idx = [pArray indexOfObject:self.containerViewController.currentSegueIdentifier];
+
+    if(idx >= 0){
+        idx = idx + 1 < pArray.count ?  idx + 1 :0 ;
+        [self.containerViewController swapViewControllersByID:pArray[idx]];
+    }
+
+}
+
+
 
 @end
