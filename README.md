@@ -24,11 +24,11 @@ Blog post [storyboards-with-custom-container-view-controllers](http://sandmoose.
 ---------
 ## Usage
 
-**Step 1 :  ** add `Container View`  on  view controller
-**Step 2 : ** add one or more child `view controller`  segue them to `Container View` , segue type `empty`
-**Step 3 : **  set segue ID
-**Step 4: ** set `Container View` and multiple child View `view controller` bind Class
-**Step 5: **  call switch method
+**Step 1 :** add `Container View`  on  view controller
+**Step 2 :** add one or more child `view controller`  segue them to `Container View` , segue type `empty`
+**Step 3 :**  set segue ID
+**Step 4:** set `Container View` and multiple child View `view controller` bind Class
+**Step 5:**  call switch method
 
 ---------
 - Init `Container View` 
