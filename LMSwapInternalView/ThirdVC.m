@@ -9,6 +9,7 @@
 #import "ThirdVC.h"
 
 @interface ThirdVC ()
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentCtrl;
 
 @end
 
@@ -18,4 +19,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+- (IBAction)btn_clickHandle:(id)sender {
+    
+    NSString *str = [_segmentCtrl selectedSegmentIndex] == 0 ? @"YES" : @"NO" ;
+    
+    [self.container swapViewControllersByID:@"embedFirst"
+                                  SELString:@"setThirdDateToFirst:" withObject:str];
+}
+
 @end

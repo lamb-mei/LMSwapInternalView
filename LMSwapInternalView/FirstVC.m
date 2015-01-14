@@ -9,6 +9,7 @@
 #import "FirstVC.h"
 
 @interface FirstVC ()
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -27,6 +28,13 @@
     
     [self.container swapViewControllersByID:@"embedThird"];
 }
-
+-(void)setThirdDateToFirst:(NSString *)str
+{
+    NSLog(@"str %@" ,str  );
+    if(str){
+        _statusLabel.text = str;
+    }
+    
+}
 
 @end
