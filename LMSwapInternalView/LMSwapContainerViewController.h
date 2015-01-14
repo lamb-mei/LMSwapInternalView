@@ -16,4 +16,5 @@
 @property (nonatomic) NSString *defaultSID;
 
 - (void)swapViewControllersByID:(NSString *)sid;
+- (void)swapViewControllersByID:(NSString *)segueIdentifier SELString:(NSString*)sel_string withObject:(id)info;
 @end

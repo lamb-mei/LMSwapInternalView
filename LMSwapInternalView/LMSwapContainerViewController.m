@@ -22,8 +22,20 @@
 #import "LMSwapChildViewController.h"
 
 
-@interface LMSwapContainerViewController ()
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
+@interface LMSwapContainerViewController ()
+{
+    NSString * _sel_string;
+    id _info;
+    
+}
 
 @property (assign, nonatomic) BOOL transitionInProgress;
 
@@ -80,13 +92,33 @@
 
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController
 {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-
+    
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
-
+    
+    //新增 切換的時候可以觸發目標的動作
+    //e.g 先更新畫面 ，或把直帶給這個 ctrl
+    if(_sel_string != nil){
+        SEL menuMethod = NSSelectorFromString(_sel_string);
+        
+        if ([toViewController respondsToSelector:menuMethod]) {
+            
+            //消除警告 [self performSelector:menuMethod];
+            SuppressPerformSelectorLeakWarning(
+                                               [toViewController performSelector:menuMethod withObject:_info]
+                                               );
+        }
+        //清空
+        _sel_string = nil;
+        _info = nil;
+    }
+    
+    
+    
+    
     [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
         [fromViewController removeFromParentViewController];
         [toViewController didMoveToParentViewController:self];
@@ -114,6 +146,15 @@
     [self performSegueWithIdentifier:segueIdentifier sender:nil];
 }
 
+//可以傳遞資料
+- (void)swapViewControllersByID:(NSString *)segueIdentifier SELString:(NSString*)sel_string withObject:(id)info
+{
+    _sel_string = sel_string;
+    _info = info;
+    
+    [self swapViewControllersByID:(NSString *)segueIdentifier];
+    
+}
 
 
 @end
